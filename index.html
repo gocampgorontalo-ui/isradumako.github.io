@@ -3,41 +3,79 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ============================================================
+  PETUNJUK SINGKAT
+  1. Warna situs        -> cari  "WARNA"      (di dalam <style>, paling atas)
+  2. Teks & data situs  -> cari  "ISI SITUS"  (bagian <body>)
+  3. Teks & warna video -> cari  "PENGATURAN SHOWREEL" (di dalam <script>)
+  Setelah mengedit: simpan (Ctrl+S), lalu jalankan Deploy-Portofolio.
+============================================================= -->
+
+<!-- Judul tab browser & deskripsi untuk Google -->
 <title>Moh. Isra Dumako — Digital Marketing, Data Analyst &amp; Multimedia</title>
 <meta name="description" content="Portofolio freelance Moh. Isra Dumako: digital marketing, data analyst, video editor, desain grafis, dan AI automation.">
+
+<!-- Ikon kecil di tab browser (huruf "ID" emas). Ganti ID dengan inisial lain jika mau -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23050505'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Georgia,serif' font-weight='700' text-anchor='middle' fill='%23D4AF37'%3EID%3C/text%3E%3C/svg%3E">
+
+<!-- Font dari Google Fonts: Cormorant Garamond (judul) dan Manrope (teks) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Manrope:wght@400;600;800&display=swap">
+
 <style>
-:root{--bg:#050505;--panel:#0E0D0A;--ink:#EDE6D3;--mute:#A79F89;--gold:#D4AF37;--gold2:#F1D78A;--line:#2E2813}
+/* ============================ WARNA ============================ */
+:root{
+  --bg:    #050505;  /* latar halaman (hitam) */
+  --panel: #0E0D0A;  /* latar bar kontrol video */
+  --ink:   #EDE6D3;  /* teks utama (krem) */
+  --mute:  #A79F89;  /* teks sekunder (abu-krem) */
+  --gold:  #D4AF37;  /* emas utama */
+  --gold2: #F1D78A;  /* emas terang (judul, hover) */
+  --line:  #2E2813;  /* garis pemisah tipis */
+}
+
+/* ===================== DASAR HALAMAN ===================== */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,sans-serif;line-height:1.6}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
-.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px} /* lebar isi halaman */
+
+/* ===================== MENU ATAS ===================== */
 nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid var(--line)}
 nav b{font-family:"Cormorant Garamond",serif;font-size:1.5rem;color:var(--gold)}
 nav div{display:flex;gap:24px}
 nav a{text-decoration:none;color:var(--mute);font-weight:600;font-size:.95rem}
 nav a:hover{color:var(--gold2)}
+
+/* ===================== JUDUL ===================== */
 h1,h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:700;letter-spacing:-.01em;line-height:1}
 h1{font-size:clamp(3rem,9vw,7rem);margin:48px 0 18px}
 h1 em{font-style:italic;color:var(--gold);font-weight:500}
+h2{font-size:clamp(2.2rem,5vw,3.6rem);margin:0 0 28px;color:var(--gold2)}
 .lead{font-size:clamp(1.05rem,2vw,1.25rem);color:var(--mute);max-width:36em;margin:0 0 36px}
+section{padding:96px 0 0} /* jarak antar bagian */
+
+/* ===================== SHOWREEL ===================== */
 .stage{border:1px solid var(--gold);border-radius:4px;overflow:hidden;background:#000;box-shadow:0 0 70px -25px rgba(212,175,55,.45)}
 canvas{display:block;width:100%;height:auto;aspect-ratio:16/9}
 .ctl{display:flex;align-items:center;gap:14px;padding:12px 16px;border-top:1px solid var(--line);background:var(--panel)}
 .ctl button{font:inherit;font-weight:800;border:0;border-radius:2px;padding:8px 18px;background:var(--gold);color:#050505;cursor:pointer;min-width:80px}
 .ctl input{flex:1;accent-color:var(--gold);min-width:0}
 .ctl output{color:var(--mute);font-variant-numeric:tabular-nums;min-width:90px;text-align:right;font-size:.9rem}
-section{padding:96px 0 0}
-h2{font-size:clamp(2.2rem,5vw,3.6rem);margin:0 0 28px;color:var(--gold2)}
+
+/* ===================== TENTANG ===================== */
 .split{display:grid;grid-template-columns:1fr 2fr;gap:40px}
 .split>p{margin:0;font-size:1.15rem;color:var(--ink)}
-.rows{border-top:1px solid var(--gold)}
+
+/* ===================== LAYANAN ===================== */
+.rows{border-top:1px solid var(--gold);margin:0;padding:0}
 .rows li{list-style:none;display:flex;justify-content:space-between;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);font-size:1.15rem}
 .rows li span{color:var(--mute);font-size:.95rem;text-align:right}
-.rows{margin:0;padding:0}
+
+/* ===================== PENGALAMAN ===================== */
 .tl{margin:0;padding:0 0 0 28px;border-left:1px solid var(--gold);list-style:none}
 .tl li{position:relative;padding-bottom:40px}
 .tl li::before{content:"";position:absolute;left:-34px;top:9px;width:11px;height:11px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px var(--bg)}
@@ -45,12 +83,25 @@ h2{font-size:clamp(2.2rem,5vw,3.6rem);margin:0 0 28px;color:var(--gold2)}
 .tl .role{color:var(--gold);font-weight:600;margin:2px 0}
 .tl small{color:var(--mute)}
 .tl ul{margin:8px 0 0;padding-left:18px;color:var(--mute)}
-.tags{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
-.tags li{border:1px solid var(--gold);color:var(--gold2);padding:7px 16px;border-radius:2px;font-weight:600}
+
+/* ===================== PENDIDIKAN ===================== */
 .edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
 .edu div{border-left:2px solid var(--gold);padding-left:18px}
 .edu h3{margin:0;font-family:"Cormorant Garamond",serif;font-size:1.6rem}
 .edu p{margin:0;color:var(--mute)}
+
+/* ===================== KEMAMPUAN ===================== */
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+.tags li{border:1px solid var(--gold);color:var(--gold2);padding:7px 16px;border-radius:2px;font-weight:600}
+
+/* ===================== KARYA (galeri, opsional) ===================== */
+.karya{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.karya figure{margin:0}
+.karya img,.karya video{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border:1px solid var(--line);background:var(--panel)}
+.karya figcaption{margin-top:10px;font-weight:600}
+.karya figcaption span{display:block;color:var(--mute);font-weight:400;font-size:.95rem}
+
+/* ===================== KONTAK ===================== */
 .cta{margin-top:96px;border:1px solid var(--gold);padding:clamp(32px,6vw,72px);background:linear-gradient(135deg,#14110A,#050505)}
 .cta h2{font-size:clamp(2.4rem,7vw,5rem);max-width:12ch;margin-bottom:18px}
 .cta p{color:var(--mute);margin:0 0 24px}
@@ -60,112 +111,355 @@ h2{font-size:clamp(2.2rem,5vw,3.6rem);margin:0 0 28px;color:var(--gold2)}
 .btn:hover{background:var(--gold2);color:#050505}
 .meta{margin-top:18px;color:var(--mute);font-size:.95rem}
 footer{padding:40px 0 48px;color:var(--mute);font-size:.9rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-@media (max-width:700px){.split{grid-template-columns:1fr}.ctl output{display:none}nav div{gap:14px}.rows li{flex-direction:column;gap:2px}.rows li span{text-align:left}}
+
+/* ===================== TAMPILAN HP ===================== */
+@media (max-width:700px){
+  .split{grid-template-columns:1fr}
+  .ctl output{display:none}
+  nav div{gap:14px}
+  .rows li{flex-direction:column;gap:2px}
+  .rows li span{text-align:left}
+}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
+
 <body>
 <div class="wrap">
-<nav><b>MID</b><div><a href="#tentang">Tentang</a><a href="#layanan">Layanan</a><a href="#pengalaman">Pengalaman</a><a href="#kontak">Kontak</a></div></nav>
 
+<!-- ======================= ISI SITUS: MENU ======================= -->
+<nav>
+  <b>MID</b> <!-- logo teks: ganti dengan inisial Anda -->
+  <div>
+    <a href="#tentang">Tentang</a>
+    <a href="#layanan">Layanan</a>
+    <a href="#pengalaman">Pengalaman</a>
+    <a href="#kontak">Kontak</a>
+  </div>
+</nav>
+
+<!-- ======================= ISI SITUS: BAGIAN ATAS + VIDEO ======================= -->
 <header>
-<h1>Marketing yang <em>disampaikan</em> lewat visual.</h1>
-<p class="lead">Moh. Isra Dumako, freelancer digital marketing, data analyst, video editor, dan desainer grafis dari Gorontalo. Tonton showreel 15 detik ini.</p>
-<div class="stage">
-<canvas id="c" width="1280" height="720" role="img" aria-label="Showreel 15 detik: Isra Dumako, marketing, data, visual, lebih dari 6 tahun di dunia digital"></canvas>
-<div class="ctl"><button id="pp" type="button">Jeda</button><input id="sc" type="range" min="0" max="15" step="0.01" value="0" aria-label="Posisi showreel"><output id="tm">0.0 / 15 dtk</output></div>
-</div>
+  <h1>Marketing yang <em>disampaikan</em> lewat visual.</h1>
+  <p class="lead">Moh. Isra Dumako, freelancer digital marketing, data analyst, video editor, dan desainer grafis dari Gorontalo. Tonton showreel 15 detik ini.</p>
+  <div class="stage">
+    <canvas id="c" width="1280" height="720" role="img" aria-label="Showreel 15 detik: Isra Dumako, marketing, data, visual, lebih dari 6 tahun di dunia digital"></canvas>
+    <div class="ctl">
+      <button id="pp" type="button">Jeda</button>
+      <input id="sc" type="range" min="0" max="15" step="0.01" value="0" aria-label="Posisi showreel">
+      <output id="tm">0.0 / 15 dtk</output>
+    </div>
+  </div>
 </header>
 
-<section id="tentang"><div class="split"><h2>Tentang saya</h2>
-<p>Saya freelancer di bidang digital marketing dan data analyst, juga mengerjakan video editing dan desain grafis. Saat ini saya sedang mendalami AI automation. Dengan pengalaman lebih dari 6 tahun di dunia digital dan Komunikasi Digital, saya bisa menyampaikan pesan marketing lewat visual.</p></div></section>
+<!-- ======================= ISI SITUS: TENTANG ======================= -->
+<section id="tentang">
+  <div class="split">
+    <h2>Tentang saya</h2>
+    <p>Saya freelancer di bidang digital marketing dan data analyst, juga mengerjakan video editing dan desain grafis. Saat ini saya sedang mendalami AI automation. Dengan pengalaman lebih dari 6 tahun di dunia digital dan Komunikasi Digital, saya bisa menyampaikan pesan marketing lewat visual.</p>
+  </div>
+</section>
 
-<section id="layanan"><h2>Layanan</h2>
-<ul class="rows">
-<li>Digital marketing <span>Social media &amp; content marketing</span></li>
-<li>Data analyst <span>Visualisasi, pembersihan, dan pengolahan data</span></li>
-<li>Video editing <span>Adobe Premiere Pro</span></li>
-<li>Desain grafis <span>Adobe Illustrator &amp; Photoshop</span></li>
-<li>AI automation <span>Alur kerja otomatis dengan n8n</span></li>
-</ul></section>
+<!-- ======================= ISI SITUS: LAYANAN =======================
+  Tambah layanan: salin satu baris <li>...</li>, lalu ubah teksnya. -->
+<section id="layanan">
+  <h2>Layanan</h2>
+  <ul class="rows">
+    <li>Digital marketing <span>Social media &amp; content marketing</span></li>
+    <li>Data analyst <span>Visualisasi, pembersihan, dan pengolahan data</span></li>
+    <li>Video editing <span>Adobe Premiere Pro - CapCut Pro</span></li>
+    <li>Desain grafis <span>Adobe Illustrator - Photoshop - Canva Pro</span></li>
+    <li>AI automation <span>Alur kerja otomatis dengan n8n - BOT Automation</span></li>
+  </ul>
+</section>
 
-<section id="pengalaman"><h2>Pengalaman</h2>
-<ol class="tl">
-<li><h3>Mattel</h3><div class="role">Data Analyst, magang 3 bulan</div><small>2023 · Cikarang, Bekasi, Jawa Barat</small><ul><li>Data visualization</li><li>Data cleaning &amp; processing</li></ul></li>
-<li><h3>PT Komatsu Undercarriage Indonesia</h3><div class="role">IT QA, magang 4 bulan</div><small>2023 · Cikarang Utara, Bekasi, Jawa Barat</small><ul><li>Membuat skenario pengetesan</li><li>Bug reporting</li></ul></li>
-<li><h3>Muraa Supermarket</h3><div class="role">Creative Digital Marketing</div><small>2024 – 2025 · Kota Gorontalo</small><ul><li>Social media marketing</li><li>Content marketing</li></ul></li>
-</ol></section>
 
-<section id="pendidikan"><h2>Pendidikan</h2>
-<div class="edu"><div><h3>President University</h3><p>Sistem Informasi · 2019 – 2023</p></div><div><h3>Ichsan University</h3><p>Sistem Informasi · 2023 – sekarang</p></div></div></section>
+<section id="karya">
+  <h2>Karya</h2>
+  <div class="karya">
+    <figure>
+      <img src="karya/desain-1.jpg" alt="Deskripsi singkat desain">
+      <figcaption>Judul karya <span>Desain grafis · Photoshop</span></figcaption>
+    </figure>
+    <figure>
+      <video src="karya/video-1.mp4" controls preload="metadata"></video>
+      <figcaption>Judul video <span>Video editing · Premiere Pro</span></figcaption>
+    </figure>
+  </div>
+</section>
 
-<section id="kemampuan"><h2>Kemampuan</h2>
-<ul class="tags"><li>SQL</li><li>Statistika</li><li>Microsoft Excel &amp; Word</li><li>Adobe Illustrator</li><li>Adobe Photoshop</li><li>Adobe Premiere Pro</li><li>n8n Automation</li><li>Komunikasi yang baik</li><li>Kerja sama tim</li><li>Pemecah masalah</li></ul></section>
 
-<section id="kontak" style="padding-top:0"><div class="cta"><h2>Ada proyek yang ingin dikerjakan?</h2><p>Ceritakan kebutuhan Anda. Saya balas secepatnya.</p>
-<a class="btn g" href="https://wa.me/628782972053" target="_blank" rel="noopener">Chat WhatsApp</a><a class="btn o" href="mailto:isradumako30@gmail.com">Kirim email</a>
-<div class="meta">isradumako30@gmail.com · Molosipat W, Kec. Kota Barat, Kota Gorontalo, Gorontalo 96136</div></div></section>
+<!-- ======================= ISI SITUS: PENGALAMAN =======================
+  Tambah pengalaman: salin satu blok <li>...</li> lengkap, lalu ubah isinya. -->
+<section id="pengalaman">
+  <h2>Pengalaman</h2>
+  <ol class="tl">
+    <li>
+      <h3>Mattel</h3>
+      <div class="role">Data Analyst, magang 3 bulan</div>
+      <small>2023 · Cikarang, Bekasi, Jawa Barat</small>
+      <ul><li>Data visualization</li><li>Data cleaning &amp; processing</li></ul>
+    </li>
+    <li>
+      <h3>PT Komatsu Undercarriage Indonesia</h3>
+      <div class="role">IT QA, magang 4 bulan</div>
+      <small>2023 · Cikarang Utara, Bekasi, Jawa Barat</small>
+      <ul><li>Membuat skenario pengetesan</li><li>Bug reporting</li></ul>
+    </li>
+    <li>
+      <h3>Muraa Supermarket</h3>
+      <div class="role">Creative Digital Marketing</div>
+      <small>2024 – 2025 · Kota Gorontalo</small>
+      <ul><li>Social media marketing</li><li>Content marketing</li></ul>
+    </li>
+  </ol>
+</section>
+
+<!-- ======================= ISI SITUS: PENDIDIKAN ======================= -->
+<section id="pendidikan">
+  <h2>Pendidikan</h2>
+  <div class="edu">
+
+    <div><h3>SMAN 3 Kota Gorontalo</h3><p>IPA · 2017 – 2019</p></div>
+    <div><h3>President University</h3><p>Sistem Informasi · 2019 – 2023</p></div>
+    
+  </div>
+</section>
+
+<!-- ======================= ISI SITUS: KEMAMPUAN =======================
+  Tambah kemampuan: salin satu <li>...</li>. -->
+<section id="kemampuan">
+  <h2>Kemampuan</h2>
+  <ul class="tags">
+    <li>SQL</li><li>Statistika</li><li>Microsoft Excel &amp; Word</li>
+    <li>Adobe Illustrator</li><li>Adobe Photoshop</li><li>Adobe Premiere Pro</li>
+    <li>n8n Automation</li><li>Komunikasi yang baik</li><li>Kerja sama tim</li><li>Pemecah masalah</li>
+  </ul>
+</section>
+
+<!-- ======================= ISI SITUS: KONTAK =======================
+  WhatsApp: ganti angka setelah wa.me/ (kode negara tanpa +, tanpa 0 di depan).
+  Contoh: 0878-8297-2053 menjadi 628782972053 -->
+<section id="kontak" style="padding-top:0">
+  <div class="cta">
+    <h2>Ada proyek yang ingin dikerjakan?</h2>
+    <p>Ceritakan kebutuhan Anda. Saya balas secepatnya.</p>
+    <a class="btn g" href="https://wa.me/628782972053" target="_blank" rel="noopener">Chat WhatsApp</a>
+    <a class="btn o" href="mailto:isradumako30@gmail.com">Kirim email</a>
+    <div class="meta">isradumako30@gmail.com · Kota Gorontalo, Gorontalo</div>
+  </div>
+</section>
+
 <footer><span>© 2026 Moh. Isra Dumako</span><span>Freelance</span></footer>
 </div>
 
 <script>
 (function(){
-var C=document.getElementById('c'),x=C.getContext('2d'),W=1280,H=720,D=15,SL=3;
-var P={bk:'#050505',g:'#D4AF37',g2:'#F1D78A',g3:'#8C6D1F',iv:'#EDE6D3'};
-var F='"Cormorant Garamond",Georgia,serif';
-var cl=function(v,a,b){return Math.min(b==null?1:b,Math.max(a==null?0:a,v))};
-var ph=function(t,a,b){return cl((t-a)/(b-a))};
-var o3=function(t){return 1-Math.pow(1-t,3)};
-var io=function(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2};
-var ob=function(t){return 1+2.70158*Math.pow(t-1,3)+1.70158*Math.pow(t-1,2)};
+/* =====================================================================
+   PENGATURAN SHOWREEL  <- bagian yang boleh Anda ubah
+   ===================================================================== */
+var CONFIG = {
+  /* Detik per adegan. Ada 5 adegan, jadi 3 detik = video 15 detik.
+     Jangan kurang dari 3 supaya animasi tidak terpotong. */
+  detikPerAdegan: 3,
+
+  /* Warna video (kode hex). Sebaiknya samakan dengan WARNA di CSS. */
+  warna: {
+    latar:      '#050505',
+    emas:       '#D4AF37',
+    emasTerang: '#F1D78A',
+    emasGelap:  '#8C6D1F',
+    teks:       '#EDE6D3'
+  },
+
+  /* Font di dalam video (harus sama dengan font yang dimuat di atas) */
+  font: '"Cormorant Garamond",Georgia,serif',
+
+  /* Adegan 1: judul pembuka.
+     Nama maksimal sekitar 11 huruf agar muat. Kalau lebih panjang,
+     kecilkan ukuranHuruf. */
+  adegan1: {
+    nama: 'ISRA DUMAKO',
+    ukuranHuruf: 170,
+    subjudul: 'FREELANCE  ·  SISTEM INFORMASI'
+  },
+
+  /* Adegan 2: tiga kata besar. Maksimal sekitar 9 huruf per kata. */
+  adegan2: {
+    kata: ['MARKETING', 'DATA', 'VISUAL']
+  },
+
+  /* Adegan 3: kata di atas animasi titik gelombang */
+  adegan3: {
+    kata: 'data'
+  },
+
+  /* Adegan 4: angka yang menghitung naik */
+  adegan4: {
+    angka: 6,
+    akhiran: '+',
+    label: 'tahun di dunia digital'
+  },
+
+  /* Adegan 5: penutup */
+  adegan5: {
+    judul: 'Mari bekerja sama',
+    nama:  'Moh. Isra Dumako',
+    email: 'isradumako30@gmail.com'
+  }
+};
+
+/* =====================================================================
+   MESIN ANIMASI  <- sebaiknya jangan diubah kecuali Anda paham
+   ===================================================================== */
+var C = document.getElementById('c'), x = C.getContext('2d');
+var W = 1280, H = 720;
+var SL = CONFIG.detikPerAdegan;
+var P = {
+  bk: CONFIG.warna.latar, g: CONFIG.warna.emas, g2: CONFIG.warna.emasTerang,
+  g3: CONFIG.warna.emasGelap, iv: CONFIG.warna.teks
+};
+var F = CONFIG.font;
+
+/* Fungsi bantu: batas nilai, kemajuan 0-1, dan kurva gerak (easing) */
+var cl = function(v,a,b){return Math.min(b==null?1:b,Math.max(a==null?0:a,v))};
+var ph = function(t,a,b){return cl((t-a)/(b-a))};
+var o3 = function(t){return 1-Math.pow(1-t,3)};
+var io = function(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2};
+var ob = function(t){return 1+2.70158*Math.pow(t-1,3)+1.70158*Math.pow(t-1,2)};
+
+/* Fungsi bantu menggambar */
 function font(s,st){x.font=(st||'700')+' '+s+'px '+F}
 function txt(s,px,py,size,col,al,st){font(size,st);x.fillStyle=col;x.textAlign=al||'left';x.textBaseline='alphabetic';x.fillText(s,px,py)}
 function bg(){x.fillStyle=P.bk;x.fillRect(0,0,W,H)}
+
+/* Teks yang muncul huruf demi huruf dari bawah garis */
 function kin(s,cx,base,size,col,lt,t0,st,band){
- font(size);x.textAlign='left';var tot=x.measureText(s).width,px=cx-tot/2;
- x.save();x.beginPath();x.rect(0,base-band,W,band+size*.3);x.clip();
- for(var i=0;i<s.length;i++){var p=ob(ph(lt,t0+i*st,t0+i*st+.6));var off=x.measureText(s.slice(0,i)).width;
-  font(size);x.fillStyle=col;x.fillText(s[i],px+off,base+(1-p)*band*1.1)}
- x.restore()}
-function s1(lt){bg();
- var a=o3(ph(lt,0,1.4));x.strokeStyle=P.g;x.lineWidth=2;
- x.beginPath();x.moveTo(W/2-a*420,250);x.lineTo(W/2+a*420,250);x.stroke();
- x.beginPath();x.moveTo(W/2-a*420,500);x.lineTo(W/2+a*420,500);x.stroke();
- kin('ISRA DUMAKO',W/2,420,170,P.iv,lt,.3,.07,200);
- x.globalAlpha=o3(ph(lt,1.5,2.2));txt('FREELANCE  ·  SISTEM INFORMASI',W/2,550,30,P.g2,'center','600');x.globalAlpha=1}
-function s2(lt){bg();var L=['MARKETING','DATA','VISUAL'],cl2=[P.iv,P.g,P.iv];
- for(var i=0;i<3;i++){var p=io(ph(lt,.15+i*.25,.9+i*.25)),by=230+i*190;
-  x.save();x.beginPath();x.rect(80,by-160,W,200);x.clip();txt(L[i],80-(1-p)*900,by,180,cl2[i]);x.restore()}
- x.save();x.translate(1080,360);x.rotate(lt*.8);x.strokeStyle=P.g;x.lineWidth=2;
- var g=o3(ph(lt,.4,1.6));for(var r=0;r<4;r++){x.beginPath();x.arc(0,0,(60+r*45)*g,0,5.2+r*.3);x.stroke()}x.restore()}
-function s3(lt){bg();var cols=16,rows=9,sp=80;
- for(var i=0;i<cols;i++)for(var j=0;j<rows;j++){var px=(i+.5)*sp,py=(j+.5)*sp+(H-rows*sp)/2,d=Math.hypot(px-W/2,py-H/2);
-  var it=o3(ph(lt,d/1400,d/1400+.5)),w=Math.sin(d/60-lt*5),r=(9+w*13)*it;if(r<1)continue;
-  x.fillStyle=w>.55?P.g2:(w>0?P.g:P.g3);x.beginPath();x.arc(px,py,Math.abs(r),0,7);x.fill()}
- x.fillStyle=P.bk;x.fillRect(50,H-200,520,150);x.globalAlpha=o3(ph(lt,.8,1.6));txt('data',70,H-90,130,P.iv);x.globalAlpha=1}
-function blob(cx,cy,R,lt,sd){x.beginPath();for(var k=0;k<=120;k++){var a=k/120*6.2832,r=R+R*.14*Math.sin(a*3+lt*3+sd)+R*.08*Math.sin(a*5-lt*2+sd);
- var px=cx+Math.cos(a)*r,py=cy+Math.sin(a)*r;k?x.lineTo(px,py):x.moveTo(px,py)}x.closePath()}
-function s4(lt){bg();var sc=ob(ph(lt,0,.9));
- x.strokeStyle=P.g;x.lineWidth=3;blob(930,H/2,210*sc,lt,0);x.stroke();
- var gr=x.createRadialGradient(930,H/2,10,930,H/2,150);gr.addColorStop(0,P.g2);gr.addColorStop(1,P.g3);x.fillStyle=gr;blob(930,H/2,120*sc,lt,2);x.fill();
- var n=Math.round(6*o3(ph(lt,.2,1.5)));txt(n+'+',70,H/2+80,320,P.g);
- x.globalAlpha=o3(ph(lt,1.2,1.9));txt('tahun di dunia digital',80,H/2+150,54,P.iv,'left','500');x.globalAlpha=1}
-function s5(lt){bg();
- var a=o3(ph(lt,0,1.2));x.strokeStyle=P.g;x.lineWidth=2;x.strokeRect(W/2-a*520,H/2-a*230,a*1040,a*460);
- var p1=io(ph(lt,.3,1.1));x.save();x.beginPath();x.rect(0,H/2-160,W,140);x.clip();txt('Mari bekerja sama',W/2,H/2-30+(1-p1)*160,120,P.iv,'center');x.restore();
- var p2=o3(ph(lt,1,1.7));x.globalAlpha=p2;txt('Moh. Isra Dumako',W/2,H/2+60,56,P.g,'center','500');
- txt('isradumako30@gmail.com',W/2,H/2+125,34,P.g2,'center','500');x.globalAlpha=1}
-var S=[s1,s2,s3,s4,s5];
-function draw(t){t=cl(t,0,D-.001);var k=Math.min(4,Math.floor(t/SL)),lt=t-k*SL;
- if(k>0&&lt<.6){S[k-1](SL);var p=io(lt/.6);x.save();x.beginPath();x.arc(W/2,H/2,p*1100,0,7);x.clip();S[k](lt);x.restore()}else S[k](lt)}
-var t=0,playing=true,last=0,sc=document.getElementById('sc'),tm=document.getElementById('tm'),pp=document.getElementById('pp');
-function sync(){draw(t);sc.value=t;tm.textContent=t.toFixed(1)+' / 15 dtk'}
-function loop(ts){if(playing){t+=(ts-last)/1000;if(t>=D)t=0;sync()}last=ts;requestAnimationFrame(loop)}
+  font(size);x.textAlign='left';
+  var tot=x.measureText(s).width,px=cx-tot/2;
+  x.save();x.beginPath();x.rect(0,base-band,W,band+size*.3);x.clip();
+  for(var i=0;i<s.length;i++){
+    var p=ob(ph(lt,t0+i*st,t0+i*st+.6));
+    var off=x.measureText(s.slice(0,i)).width;
+    font(size);x.fillStyle=col;x.fillText(s[i],px+off,base+(1-p)*band*1.1);
+  }
+  x.restore();
+}
+
+/* Adegan 1: nama */
+function s1(lt){
+  var c=CONFIG.adegan1; bg();
+  var a=o3(ph(lt,0,1.4));x.strokeStyle=P.g;x.lineWidth=2;
+  x.beginPath();x.moveTo(W/2-a*420,250);x.lineTo(W/2+a*420,250);x.stroke();
+  x.beginPath();x.moveTo(W/2-a*420,500);x.lineTo(W/2+a*420,500);x.stroke();
+  kin(c.nama,W/2,420,c.ukuranHuruf,P.iv,lt,.3,.07,200);
+  x.globalAlpha=o3(ph(lt,1.5,2.2));txt(c.subjudul,W/2,550,30,P.g2,'center','600');x.globalAlpha=1;
+}
+
+/* Adegan 2: tiga kata besar + cincin berputar */
+function s2(lt){
+  var L=CONFIG.adegan2.kata, warnaKata=[P.iv,P.g,P.iv]; bg();
+  for(var i=0;i<3;i++){
+    var p=io(ph(lt,.15+i*.25,.9+i*.25)),by=230+i*190;
+    x.save();x.beginPath();x.rect(80,by-160,W,200);x.clip();
+    txt(L[i],80-(1-p)*900,by,180,warnaKata[i]);x.restore();
+  }
+  x.save();x.translate(1080,360);x.rotate(lt*.8);x.strokeStyle=P.g;x.lineWidth=2;
+  var g=o3(ph(lt,.4,1.6));
+  for(var r=0;r<4;r++){x.beginPath();x.arc(0,0,(60+r*45)*g,0,5.2+r*.3);x.stroke()}
+  x.restore();
+}
+
+/* Adegan 3: titik-titik bergelombang */
+function s3(lt){
+  bg();var cols=16,rows=9,sp=80;
+  for(var i=0;i<cols;i++)for(var j=0;j<rows;j++){
+    var px=(i+.5)*sp,py=(j+.5)*sp+(H-rows*sp)/2,d=Math.hypot(px-W/2,py-H/2);
+    var it=o3(ph(lt,d/1400,d/1400+.5)),w=Math.sin(d/60-lt*5),r=(9+w*13)*it;
+    if(r<1)continue;
+    x.fillStyle=w>.55?P.g2:(w>0?P.g:P.g3);x.beginPath();x.arc(px,py,Math.abs(r),0,7);x.fill();
+  }
+  x.fillStyle=P.bk;x.fillRect(50,H-200,520,150);
+  x.globalAlpha=o3(ph(lt,.8,1.6));txt(CONFIG.adegan3.kata,70,H-90,130,P.iv);x.globalAlpha=1;
+}
+
+/* Bentuk organik yang bergerak (dipakai adegan 4) */
+function blob(cx,cy,R,lt,sd){
+  x.beginPath();
+  for(var k=0;k<=120;k++){
+    var a=k/120*6.2832,r=R+R*.14*Math.sin(a*3+lt*3+sd)+R*.08*Math.sin(a*5-lt*2+sd);
+    var px=cx+Math.cos(a)*r,py=cy+Math.sin(a)*r;
+    k?x.lineTo(px,py):x.moveTo(px,py);
+  }
+  x.closePath();
+}
+
+/* Adegan 4: angka menghitung naik */
+function s4(lt){
+  var c=CONFIG.adegan4; bg();var sc=ob(ph(lt,0,.9));
+  x.strokeStyle=P.g;x.lineWidth=3;blob(930,H/2,210*sc,lt,0);x.stroke();
+  var gr=x.createRadialGradient(930,H/2,10,930,H/2,150);
+  gr.addColorStop(0,P.g2);gr.addColorStop(1,P.g3);x.fillStyle=gr;blob(930,H/2,120*sc,lt,2);x.fill();
+  var n=Math.round(c.angka*o3(ph(lt,.2,1.5)));
+  txt(n+c.akhiran,70,H/2+80,320,P.g);
+  x.globalAlpha=o3(ph(lt,1.2,1.9));txt(c.label,80,H/2+150,54,P.iv,'left','500');x.globalAlpha=1;
+}
+
+/* Adegan 5: penutup dan kontak */
+function s5(lt){
+  var c=CONFIG.adegan5; bg();
+  var a=o3(ph(lt,0,1.2));x.strokeStyle=P.g;x.lineWidth=2;
+  x.strokeRect(W/2-a*520,H/2-a*230,a*1040,a*460);
+  var p1=io(ph(lt,.3,1.1));
+  x.save();x.beginPath();x.rect(0,H/2-160,W,140);x.clip();
+  txt(c.judul,W/2,H/2-30+(1-p1)*160,120,P.iv,'center');x.restore();
+  x.globalAlpha=o3(ph(lt,1,1.7));
+  txt(c.nama,W/2,H/2+60,56,P.g,'center','500');
+  txt(c.email,W/2,H/2+125,34,P.g2,'center','500');x.globalAlpha=1;
+}
+
+/* Daftar adegan sesuai urutan, dan durasi total */
+var S = [s1,s2,s3,s4,s5];
+var D = S.length * SL;
+
+/* Menggambar satu bingkai pada detik ke-t, termasuk transisi lingkaran */
+function draw(t){
+  t=cl(t,0,D-.001);
+  var k=Math.min(S.length-1,Math.floor(t/SL)),lt=t-k*SL;
+  if(k>0&&lt<.6){
+    S[k-1](SL);
+    var p=io(lt/.6);
+    x.save();x.beginPath();x.arc(W/2,H/2,p*1100,0,7);x.clip();S[k](lt);x.restore();
+  } else S[k](lt);
+}
+
+/* Pemutar: tombol, penggeser waktu, dan perulangan */
+var t=0, playing=true, last=0;
+var sc=document.getElementById('sc'), tm=document.getElementById('tm'), pp=document.getElementById('pp');
+sc.max = D;
+
+function sync(){
+  draw(t);sc.value=t;
+  tm.textContent=t.toFixed(1)+' / '+D+' dtk';
+}
+function loop(ts){
+  if(playing){t+=(ts-last)/1000;if(t>=D)t=0;sync()}
+  last=ts;requestAnimationFrame(loop);
+}
 pp.onclick=function(){playing=!playing;pp.textContent=playing?'Jeda':'Putar'};
 sc.oninput=function(){t=parseFloat(sc.value);sync()};
-if(matchMedia('(prefers-reduced-motion: reduce)').matches){playing=false;pp.textContent='Putar';t=13.5}
+
+/* Jika perangkat meminta "kurangi gerakan", video tidak berputar otomatis */
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){
+  playing=false;pp.textContent='Putar';t=D-1.5;
+}
 sync();
-(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){sync();requestAnimationFrame(function(ts){last=ts;loop(ts)})});
+
+/* Mulai setelah font siap, supaya huruf di video tidak berganti bentuk */
+(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){
+  sync();
+  requestAnimationFrame(function(ts){last=ts;loop(ts)});
+});
 })();
 </script>
 </body>
